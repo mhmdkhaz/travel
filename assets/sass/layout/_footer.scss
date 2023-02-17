@@ -1,0 +1,76 @@
+footer {
+  background-color: $colorBlack;
+  .GetFull {
+    background: rgb(37, 37, 37);
+    background: linear-gradient(
+      102deg,
+      rgba(37, 37, 37, 1) 0%,
+      rgba(253, 126, 20, 1) 97%
+    );
+    img {
+      width: 100%;
+    }
+  }
+  .toDived {
+    width: 100%;
+    padding: 20px 0;
+    @include FlexElementRow(space-between, row);
+    figure {
+      img {
+        width: 100%;
+      }
+    }
+    p {
+      color: $ColorGrayLight;
+      letter-spacing: 1px;
+      font-size: 1rem;
+      font-weight: 100;
+    }
+    .icon {
+      ul {
+        @include FlexElementRow(space-between, row);
+        @each $social, $backcolor, $hover in $facebookIcon, $twitterkIcon,
+          $instakIcon, $googleIcon, $linkedinIcon
+        {
+          .#{$social} {
+            all: unset;
+            background-color: #{$backcolor};
+            color: $Colorwhite;
+            width: 1.1rem;
+            height: 1.1rem;
+            padding: 10px;
+            margin-left: 10px;
+            text-align: center;
+            border-radius: 50%;
+            @include Transtion(0.15s);
+            cursor: pointer;
+            &:hover {
+              background-color: $hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    .toDived {
+      @include FlexElementRow(space-between, column);
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    .toDived {
+      @include FlexElementRow(space-between, column);
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}

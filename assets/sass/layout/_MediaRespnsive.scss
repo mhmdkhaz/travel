@@ -1,0 +1,154 @@
+@media (max-width: 767px) {
+  // -------------- page index -------------------
+  .testimnials {
+    .ContentSlideQuota {
+      .SlideTestimnialsQuota {
+        @include FlexElementRow(center, column);
+      }
+    }
+  }
+  .wide {
+    .InformatinPlace {
+      @include GridElement(80vw);
+    }
+  }
+  .wrapper {
+    .AllCarouse {
+      .ContentCarouse {
+        min-width: 100%;
+      }
+    }
+  }
+  .buy {
+    .TextBuy {
+      text-align: center;
+    }
+    .BtnBook {
+      margin-top: 50px;
+    }
+  }
+  // -------------------- about page ----------------------
+  section {
+    .BackSahow {
+      h2 {
+        font-size: 5vw;
+      }
+      h1 {
+        font-size: 6vw;
+      }
+    }
+  }
+  .serviceWe {
+    margin: 0;
+    .WeAre {
+      @include GridElement(100%);
+      figure {
+        @include FlexElementRow(flex-start, row);
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  // --------------- typography --------------
+  .imageTypo {
+    .centerdContent {
+      .boxMain {
+        width: 100%;
+      }
+    }
+  }
+  // ----------------- page log in and sign up -----------------
+  .singinup {
+    .mainSign {
+      height: 90vh;
+      width: 80vw;
+      .overlay {
+        width: 100%;
+        height: 40%;
+      }
+      .overlayRight {
+        transform: translate(0, 100%);
+        -webkit-transform: translate(0, 100%);
+        -moz-transform: translate(0, 100%);
+        -ms-transform: translate(0, 100%);
+        -o-transform: translate(0, 100%);
+        height: 50%;
+      }
+      .secOne {
+        flex-direction: column;
+        .logIngOver {
+          height: 40%;
+        }
+        .signupForm {
+          padding: 5px;
+          height: 60%;
+        }
+      }
+      .secTow {
+        flex-direction: column;
+        height: 100%;
+        .signInForm {
+          padding: 5px;
+          height: 50%;
+        }
+        .createAcouneOver {
+          height: 50%;
+        }
+        .createAcouneOverLeft {
+          transform: translateX(0) translateY(0);
+          -webkit-transform: translateX(0) translateY(0);
+          -moz-transform: translateX(0) translateY(0);
+          -ms-transform: translateX(0) translateY(0);
+          -o-transform: translateX(0) translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wide {
+    .InformatinPlace {
+      @include GridElement(35vw);
+    }
+  }
+  .wrapper {
+    .AllCarouse {
+      .ContentCarouse {
+        min-width: 100%;
+      }
+    }
+  }
+  .buy {
+    .TextBuy {
+      text-align: center;
+    }
+    .BtnBook {
+      margin-top: 30px;
+    }
+  }
+  // about page
+  section {
+    .BackSahow {
+      h2 {
+        font-size: 5vw;
+      }
+      h1 {
+        font-size: 6vw;
+      }
+    }
+  }
+  .servicewe {
+    margin: 0;
+    .WeAre {
+      @include GridElement(300px);
+      figure {
+        @include FlexElementRow(flex-start, row);
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

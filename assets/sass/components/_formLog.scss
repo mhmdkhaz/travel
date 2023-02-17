@@ -1,0 +1,135 @@
+@mixin signInSignUp($Place) {
+  overflow: hidden;
+  width: 100%;
+  @include FlexElementRow($Place, column);
+  padding: $marginTopBottom - 20px 0;
+  .contentSignUpInForm {
+    @include Transtion(0.8s);
+    h1 {
+      color: $colorBlack;
+      text-transform: capitalize;
+      letter-spacing: 1.5px;
+      font-size: 40px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 20px 0;
+
+      i {
+        @include FlexElementRow(center, row);
+        margin: 0 5px;
+        height: 40px;
+        width: 40px;
+        color: $colorBlack;
+        padding: 5px;
+        border-radius: 50%;
+        border: 2px solid $Coloryellow;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        @include Transtion(0.2s);
+        &:hover {
+          border: 2px solid $colorBlack;
+          transform: rotate(10deg);
+          -webkit-transform: rotate(10deg);
+          -moz-transform: rotate(10deg);
+          -ms-transform: rotate(10deg);
+          -o-transform: rotate(10deg);
+        }
+      }
+    }
+    p {
+      font-size: 12px;
+      margin: 5px 0;
+      text-align: center;
+    }
+    form {
+      @include FlexElementRow(center, column);
+      input {
+        background: #eee;
+        border: none;
+        border-radius: 50px;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 100%;
+        // outline: none;
+        @include Transtion(0.2s);
+        &::placeholder {
+          text-transform: capitalize;
+          color: $colorBlack;
+        }
+        &:focus {
+          outline: 2px solid $Coloryellow;
+        }
+      }
+      input[type="submit"] {
+        all: unset;
+        text-transform: uppercase;
+        background-color: rgb(255, 193, 7, 0.8);
+        color: $Colorwhite;
+        padding: 10px 18px;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        @include Transtion(0.2s);
+        cursor: pointer;
+        margin-top: 20px;
+        &:hover {
+          background-color: rgb(255, 193, 7);
+        }
+      }
+    }
+  }
+}
+
+@mixin logCreatOverlay() {
+  z-index: 5;
+  overflow: hidden;
+  @include FlexElementRow(center, column);
+  height: 100%;
+  width: 100%;
+  color: $Colorwhite;
+  @include Transtion(0.8s);
+  h1 {
+    font-size: 35px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  p {
+    margin: 20px 0 30px;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  button {
+    all: unset;
+    text-transform: uppercase;
+    border: 2px solid $Colorwhite;
+    padding: 10px 18px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    @include Transtion(0.2s);
+    cursor: pointer;
+    margin-top: 20px;
+    &:hover {
+      background-color: $Colorwhite;
+      color: $Coloryellow;
+    }
+  }
+}

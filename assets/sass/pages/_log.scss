@@ -1,0 +1,174 @@
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.wave {
+  background: url("../img/wave (2).svg") repeat-x;
+  position: absolute;
+  bottom: 10px;
+  width: 6400px;
+  height: 198px;
+  opacity: 0.8;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  bottom: 0px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, 25px);
+  }
+  50% {
+    transform: translate3d(0, 150px);
+  }
+}
+
+// start in sign in and sign up
+.singinup {
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  .mainSign {
+    background: transparent;
+    display: flex;
+    width: 768px;
+    height: 480px;
+
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    box-shadow: 30px 14px 28px rgba(0, 0, 5, 0.2),
+      0 10px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      overflow: hidden;
+      background-color: rgb(255, 193, 7, 0.8);
+      width: 50%;
+      height: 100%;
+      z-index: 5;
+      @include Transtion(0.8s);
+    }
+    // start  overlay right
+    .overlayRight {
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+    }
+    .secOne {
+      width: 100%;
+      display: flex;
+      .logIngOver {
+        @include logCreatOverlay();
+      }
+
+      // start overlay bootom logIngOver
+      .logIngOverTop {
+        transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        opacity: 0;
+      }
+      // end overlay bootom logIngOver
+
+      // start in sign up
+      .signupForm {
+        @include signInSignUp(flex-start);
+      }
+      // end in sign up
+
+      // ovelay top contentSignUpForm
+      .overlayTopContentSignUpForm {
+        transform: translateX(-200%);
+        -webkit-transform: translateX(-200%);
+        -moz-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+        -o-transform: translateX(-200%);
+        opacity: 0;
+      }
+      // ovelay top contentSignUpForm
+    }
+
+    // start in sigin in form
+    .secTow {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .signInForm {
+        z-index: 5;
+        transform: translateY(-200%);
+        -webkit-transform: translateY(-200%);
+        -moz-transform: translateY(-200%);
+        -ms-transform: translateY(-200%);
+        -o-transform: translateY(-200%);
+        @include Transtion(0.8s);
+        @include signInSignUp(center);
+      }
+      .signInFormCenter {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+      }
+      // end in sigin in form
+
+      // start in create acount
+      .createAcouneOver {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        @include logCreatOverlay();
+        height: 100%;
+      }
+      .createAcouneOverLeft {
+        transform: translateX(0) translateY(100%);
+        -webkit-transform: translateX(0) translateY(100%);
+        -moz-transform: translateX(0) translateY(100%);
+        -ms-transform: translateX(0) translateY(100%);
+        -o-transform: translateX(0) translateY(100%);
+      }
+      // end in create acount
+    }
+  }
+}

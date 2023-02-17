@@ -1,0 +1,24 @@
+@mixin FlexElementRow($JustifyContent, $dir) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: wrap;
+  justify-content: $JustifyContent;
+  align-items: center;
+}
+
+@mixin GridElement($size) {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin Transtion($time) {
+  transition: all $time ease-in-out;
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -ms-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+}
+

@@ -1,0 +1,6 @@
+@mixin ZigZagImg($T, $R, $B, $L) {
+  background-image: url("../img/divider-decorate.png");
+  width: 50px;
+  height: 10px;
+  margin: $T $R $B $L;
+}

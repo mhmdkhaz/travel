@@ -1,0 +1,493 @@
+header {
+  //   background-image: url("../img/swiper-slide-1.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  .ToDivide {
+    @include GridElement(200px);
+    height: 100vh;
+    .TextHead {
+      h1 {
+        @include TextHead($Colorwhite);
+      }
+      .Zigzag {
+        @include ZigZagImg(25px, 0, 25px, 0);
+      }
+      p {
+        color: $Colorwhite;
+        font-size: 16px;
+        font-weight: 100;
+        margin-bottom: 25px;
+      }
+      .LearnMore {
+        all: unset;
+        padding: 10px;
+        text-transform: capitalize;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        border: 2px solid $Colorwhite;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        color: $Colorwhite;
+        &:hover {
+          @include ButtonMain(10px);
+        }
+      }
+    }
+    .BoxInput {
+      border-radius: 8px;
+      max-width: 566px;
+      background-color: rgba(247, 247, 247, 0.9);
+
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+      h2 {
+        @include TextHead($ColorGrayBold);
+      }
+      form {
+        padding-bottom: 30px;
+        span {
+          text-transform: capitalize;
+          color: $Colorgray;
+          margin-bottom: 30px;
+        }
+        .select {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          width: 100%;
+          height: 40px;
+          margin: 10px 0 20px 0;
+          padding-top: 10px;
+          border-radius: 8px;
+          -webkit-border-radius: 8px;
+          -moz-border-radius: 8px;
+          -ms-border-radius: 8px;
+          -o-border-radius: 8px;
+          &:focus .option {
+            position: relative;
+            pointer-events: all;
+          }
+
+          .option {
+            padding: 0 30px 0 10px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            background: $Colorwhite;
+            border-top: $Colorwhite solid 1px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            pointer-events: none;
+            order: 2;
+            z-index: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            @include Transtion(0.3s);
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            &:hover {
+              color: $Coloryellow;
+            }
+          }
+
+          input {
+            opacity: 0;
+            position: absolute;
+            left: -99999px;
+            &:checked + label {
+              order: 1;
+              z-index: 2;
+              background: $Colorwhite;
+              border-top: none;
+              position: relative;
+            }
+            &:checked + label:after {
+              content: "";
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-top: 5px solid white;
+              position: absolute;
+              right: 10px;
+              top: calc(50% - 2.5px);
+              pointer-events: none;
+              z-index: 3;
+            }
+            &:checked + label:before {
+              content: "";
+              position: absolute;
+              right: 0;
+              height: 40px;
+              width: 40px;
+              background: $Colorwhite;
+            }
+          }
+        }
+        .DateDurati {
+          @include GridElement(100px);
+          div {
+            margin-bottom: 30px;
+          }
+          .Info {
+            width: 100%;
+            @include FlexElementRow(space-between, column);
+            align-items: stretch;
+          }
+          .counter {
+            background-color: $Colorwhite;
+            border-radius: 12px;
+            padding: 10px 0;
+            width: 90%;
+            text-align: center;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            -ms-border-radius: 12px;
+            -o-border-radius: 12px;
+            .min {
+              color: $Coloryellow;
+              font-size: 25px;
+              margin-left: -50%;
+              font-weight: 800;
+              cursor: pointer;
+            }
+            .plus {
+              color: $Coloryellow;
+              font-size: 25px;
+              margin-right: -50%;
+              font-weight: 800;
+              cursor: pointer;
+            }
+          }
+        }
+        button {
+          @include ButtonMain(10px);
+          margin: 20px 0 0 50%;
+          width: 50%;
+          text-align: center;
+          transform: translate(-50%, 10px);
+          -webkit-transform: translate(-50%, 10px);
+          -moz-transform: translate(-50%, 10px);
+          -ms-transform: translate(-50%, 10px);
+          -o-transform: translate(-50%, 10px);
+        }
+      }
+    }
+  }
+}
+
+// start in tou
+.wide {
+  position: relative;
+  .our {
+    @include FlexElementRow(space-between, row);
+    align-items: flex-start;
+    margin: $marginTopBottom 0;
+    // @include MediaOur();
+    .TextTransparent {
+      position: absolute;
+      left: 10px;
+      z-index: -2;
+      font: 900 36px/1 "Montserrat", sans-serif;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #f7f7f7;
+      font-size: 10vw;
+    }
+    .tours {
+      h1 {
+        @include TextHead(#000);
+      }
+      .BackImg {
+        @include ZigZagImg(25px, 0, 25px, 0);
+      }
+    }
+    button {
+      @include ButtonMain(14px 68px);
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+    }
+  }
+  .InformatinPlace {
+    @include ShowPlace(rgb(0, 0, 0, 0.5));
+  }
+}
+
+// start in services
+.services {
+  @include MargPadBackGray();
+  .OurServices {
+    @include TextHeadMain($colorBlack);
+  }
+  @extend .BoxServices;
+}
+// end in services
+
+// start in latest
+.wrapper {
+  margin-top: 70px;
+  .wrapperText {
+    @include TextHeadMain($colorBlack);
+  }
+  .AllCarouse {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 40px 0;
+    .ContentCarouse {
+      min-width: 33.33%;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+      &:hover .carouseOne {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+      .carouseOne {
+        width: 98%;
+        @include Transtion(0.5s);
+        figure {
+          overflow: hidden;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          width: 100%;
+          &:hover img {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+          }
+          img {
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            @include Transtion(0.6s);
+          }
+        }
+        .ContentCarous {
+          padding: 0 20px;
+          .caption {
+            @include FlexElementRow(space-between, row);
+            margin-top: 10px;
+            .name {
+              background-color: $Coloryellow;
+              padding: 5px 8px;
+              border-radius: 8px;
+              -webkit-border-radius: 8px;
+              -moz-border-radius: 8px;
+              -ms-border-radius: 8px;
+              -o-border-radius: 8px;
+              color: $Colorwhite;
+              font-weight: 200;
+              text-transform: capitalize;
+              font-size: 13px;
+              letter-spacing: 0.1rem;
+            }
+            ul {
+              li {
+                list-style: none;
+                span {
+                  color: $Colorgray;
+                }
+                a {
+                  text-decoration: none;
+                  color: $Colorblue;
+                  text-transform: capitalize;
+                  @include Transtion(0.2s);
+                  &:hover {
+                    color: $Coloryellow;
+                  }
+                }
+              }
+            }
+          }
+          .explained {
+            text-transform: capitalize;
+            font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI",
+              Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 19px;
+            margin: 20px 0;
+            @include Transtion(0.3s);
+            &:hover {
+              color: $Coloryellow;
+            }
+          }
+          .dateComment {
+            @include FlexElementRow(space-between, row);
+            margin: 22px 0;
+            color: $Colorgray;
+            a {
+              @include FlexElementRow(center, row);
+              color: $Colorgray;
+              text-decoration: none;
+              i {
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .OwlDots {
+    @include FlexElementRow(center, row);
+    // .AcitveColor {
+    //   background-color: $Colorblue;
+    // }
+    // .ColorDefult {
+    // }
+    .OwlDot {
+      position: relative;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #dfe1ea;
+      text-align: center;
+      outline: none;
+      cursor: pointer;
+
+      @include Transtion(0.3s);
+      margin-right: 5px;
+    }
+  }
+  .btn {
+    @include FlexElementRow(center, row);
+    margin-top: 50px;
+    button {
+      @include ButtonMain(10px);
+    }
+  }
+}
+
+// end in lates
+// start in testimnials
+.testimnials {
+  @include MargPadBackGray();
+  position: relative;
+  .TestimnialsText {
+    @include TextHeadMain($colorBlack);
+  }
+  .ContentSlideQuota {
+    overflow: hidden;
+    display: flex;
+    scroll-behavior: smooth;
+    width: 100%;
+
+    .SlideTestimnialsQuota {
+      @include FlexElementRow(center, row);
+      flex-wrap: nowrap;
+      min-width: 100%;
+
+      figure {
+        margin-top: 20px;
+        margin-left: 30px;
+        img {
+          width: 160px;
+        }
+      }
+      .TextSlide {
+        font-size: 24px;
+        margin-left: 75px;
+        i {
+          color: $ColoryellowBolf;
+          font-size: 35px;
+        }
+        .QuotExplained {
+          margin-bottom: 25px;
+          line-height: 1.5;
+          color: $Colorgray;
+          p {
+          }
+        }
+        .quote {
+          line-height: 1.4;
+          .QuotecCite {
+            color: $Colorblue;
+          }
+          .QuoteSmall {
+            color: $Colorgray;
+          }
+        }
+      }
+    }
+  }
+  .testimnialsclick {
+    color: $Colorwhite;
+    background-color: $ColoryellowBolf;
+    padding: 5px;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    position: absolute;
+    top: 50%;
+  }
+  .leftquota {
+    left: 2%;
+  }
+  .rightquota {
+    right: 2%;
+  }
+}
+// end in testimnials
+// start in buy
+.buy {
+  background-color: $colorBlack;
+  .BuyNow {
+    @include FlexElementRow(space-between, row);
+    padding: $marginTopBottom 30px;
+    .TextBuy {
+      width: 500px;
+      h1 {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $ColoryellowBolf;
+        margin-bottom: 25px;
+        font-size: 28px;
+      }
+      p {
+        letter-spacing: 2px;
+        color: $Colorwhite;
+        text-transform: capitalize;
+      }
+    }
+    .BtnBook {
+      width: 500px;
+      @include FlexElementRow(center, row);
+      button {
+        @include ButtonMain(10px);
+        width: 150px;
+      }
+    }
+  }
+}
+// end in buy

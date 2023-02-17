@@ -1,0 +1,25 @@
+@mixin formContetn($width) {
+  @include FlexElementRow(flex-start, column);
+  align-items: flex-start;
+  label {
+    text-align: start;
+    margin: 0 0 10px 10px;
+    color: $Colorgray;
+    text-transform: capitalize;
+  }
+  .contactInpText {
+    all: unset;
+    width: $width;
+    min-height: 1px;
+    padding: 12px 25px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #29293a;
+    background-color: $Colorwhite;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+  }
+}

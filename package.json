@@ -1,0 +1,26 @@
+{
+  "name": "sealine",
+  "version": "1.0.0",
+  "description": "project scss sealine ",
+  "main": "index.js",
+  "scripts": {
+    "cmomiler": "sass --watch assets/sass:assets/css"
+  },
+  "keywords": [
+    "sass",
+    "project",
+    "and",
+    "html",
+    "css",
+    "javscript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "autoprefixer": "^10.4.13"
+  }
+}

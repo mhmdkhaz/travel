@@ -1,0 +1,63 @@
+section {
+  .HeadAbout {
+    background-image: url("../img/breadcrumbs-bg.jpg");
+    width: 100%;
+    height: $hight;
+    background-size: cover;
+    position: relative;
+  }
+  .BackSahow {
+    position: absolute;
+    width: 100%;
+    height: $hight;
+    background: rgb(51, 51, 51);
+    background: linear-gradient(
+      102deg,
+      rgba(51, 51, 51, 0.5) 23%,
+      rgba(134, 142, 150, 0.5) 100%
+    );
+    @include FlexElementRow(center, column);
+    color: $Colorwhite;
+    text-transform: capitalize;
+    h2 {
+      font-size: 30px;
+      font-weight: 100;
+    }
+    h1 {
+      font-size: 70px;
+      font-weight: 200;
+      letter-spacing: 5px;
+      margin: 30px 0;
+      position: relative;
+      &::before {
+        content: url("../img/breadcrumbs-decorate.png");
+        position: absolute;
+        top: -25%;
+        left: -70px;
+      }
+      &::after {
+        content: url("../img/breadcrumbs-decorate.png");
+        position: absolute;
+        top: -25%;
+        right: -70px;
+      }
+    }
+    .path {
+      li {
+        all: unset;
+        a {
+          text-decoration: none;
+          color: $Colorwhite;
+          @include Transtion(0.2s);
+          &:hover {
+            color: $Coloryellow;
+          }
+        }
+        i {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+// end header

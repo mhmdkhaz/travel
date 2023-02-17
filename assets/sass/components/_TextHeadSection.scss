@@ -1,0 +1,24 @@
+@mixin TextHead($ColorHead) {
+  color: $ColorHead;
+  line-height: 1.45;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-weight: 800;
+  font-size: 2.2vw;
+}
+
+@mixin TextHeadMain($colorTextHead) {
+  @include FlexElementRow(center, column);
+  h1 {
+    @include TextHead($colorTextHead);
+  }
+  .ZigZag {
+    @include ZigZagImg(25px, 0, 35px, 0);
+  }
+}
+
+@mixin MargPadBackGray {
+  margin: $marginTopBottom 0 0 0;
+  background-color: $ColorGrayLight;
+  padding: $paddingLeftRightBox 0;
+}

@@ -1,0 +1,129 @@
+.BoxServices {
+  @include GridElement(300px);
+  .box {
+    border: 1px solid #dfe1ea;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    padding: 45px;
+    @include Transtion(0.4s);
+    &:hover {
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+      background-color: $Colorwhite;
+      border: 1 solid $Colorwhite;
+    }
+    i {
+      font-size: 30px;
+      color: $Coloryellow;
+    }
+    p {
+      margin-top: 15px;
+      color: #29293a;
+      font-weight: 400;
+      font-size: 19px;
+    }
+    hr {
+      margin-top: 30px;
+      border-color: #dfe1ea;
+    }
+    .BoxTitle {
+      color: #838386;
+      letter-spacing: 0.02em;
+      margin: 22px 0 25px 0;
+      font-size: 16px;
+    }
+  }
+}
+
+//
+
+// start in card show img place
+@mixin ShowPlace($BackColoShadow) {
+  @include GridElement(400px);
+
+  .boximg {
+    figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+      img {
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        @include Transtion(0.5s);
+        width: 100%;
+        &:hover .shadow {
+          opacity: 1;
+        }
+      }
+      .shadow {
+        background-color: $BackColoShadow;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        @include FlexElementRow("center", row);
+        justify-content: center;
+        @include Transtion(0.6s);
+        .elmentCenter {
+          @include ButtonMain(10px);
+          transform: rotateX(90deg);
+          -webkit-transform: rotateX(90deg);
+          -moz-transform: rotateX(90deg);
+          -ms-transform: rotateX(90deg);
+          -o-transform: rotateX(90deg);
+          @include Transtion(0.7s);
+        }
+      }
+      &:hover .shadow {
+        opacity: 1;
+      }
+      &:hover .shadow .elmentCenter {
+        opacity: 1;
+        transform: rotateX(00deg);
+        -webkit-transform: rotateX(00deg);
+        -moz-transform: rotateX(00deg);
+        -ms-transform: rotateX(00deg);
+        -o-transform: rotateX(00deg);
+      }
+      &:hover img {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+      }
+    }
+    .InfoImg {
+      @include FlexElementRow(space-between, row);
+      margin: 15px 0;
+      span {
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 100;
+      }
+      .place {
+        color: #000;
+      }
+      .price {
+        color: $Coloryellow;
+      }
+    }
+  }
+}
+// end in card show img place

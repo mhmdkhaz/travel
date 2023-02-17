@@ -1,0 +1,263 @@
+//
+.serviceWe {
+  @extend .BoxServices;
+  margin: $marginTopBottom 0;
+  .WeAre {
+    @include GridElement(400px);
+    align-items: self-start;
+    padding: $marginTopBottom 0;
+    figure {
+      @include FlexElementRow(center, row);
+      height: 100%;
+      width: 100%;
+      img {
+        width: 80%;
+      }
+    }
+    .TextWeAre {
+      position: relative;
+      width: 90%;
+      height: 100%;
+      .WeAreHead {
+        @include TextHeadMain($colorBlack);
+        align-items: flex-start;
+      }
+      .Paragraph {
+        @include FlexElementRow(center, column);
+        margin: 35px 0;
+        letter-spacing: 2px;
+        p:nth-child(1) {
+          font-size: 19px;
+          font-weight: 300;
+          color: $Colorgray;
+        }
+        p:nth-child(2) {
+          margin: 20px 0;
+          font-size: 16px;
+          color: $ColorGrayBold;
+        }
+      }
+      button {
+        @include ButtonMain(10px);
+      }
+    }
+  }
+}
+//
+// start in services about
+.servicesAbout {
+  @include MargPadBackGray();
+  padding: $marginTopBottom 0;
+  margin: 0;
+  @extend .BoxServices;
+}
+// end in services about
+
+// start in our team
+.team {
+  @include MargPadBackGray();
+  background-color: transparent;
+  .MeetTeam {
+    @include TextHeadMain($colorBlack);
+  }
+  .PeopleTeam {
+    @include GridElement(250px);
+    .boxTeam {
+      figure {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      .explained {
+        text-align: center;
+        margin: 15px 0;
+        h1 {
+          color: $ColoryellowBolf;
+          opacity: 0.5;
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+        p {
+          color: $Colorgray;
+          font-size: 15px;
+        }
+      }
+      .icon {
+        @include FlexElementRow(center, row);
+        ul {
+          @include FlexElementRow(space-evenly, row);
+          width: 50%;
+          li {
+            all: unset;
+            color: $ColorwhiteLight;
+            cursor: pointer;
+            @include Transtion(0.2s);
+            &:hover {
+              color: $ColoryellowBolf;
+              // opacity: 0.2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// end in team
+
+// start in agencys
+.agencys {
+  background-color: $ColorGrayBold;
+  margin: $marginTopBottom 0;
+  padding: $marginTopBottom 0;
+  .ContentAgencys {
+    @include GridElement(500px);
+    align-items: flex-start;
+    .headtextDates {
+      overflow: hidden;
+      .Head {
+        @include TextHeadMain(#fff);
+        align-items: flex-start;
+      }
+      p {
+        font-size: 15px;
+        line-height: 1.5;
+        color: $ColorwhiteLight;
+      }
+      .TimeLinevertical {
+        position: relative;
+        &::before {
+          content: "";
+          background-color: $Coloryellow;
+          position: absolute;
+          left: 142px;
+          width: 2px;
+          height: 100%;
+        }
+        .TimeLine {
+          @include FlexElementRow(center, row);
+          margin: $marginTopBottom + 30px 0;
+          flex-wrap: nowrap;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 134px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: $ColorGrayBold;
+            border: 2px solid $Coloryellow;
+          }
+          .Time {
+            margin: $marginTopBottom - 30px;
+            width: 150px;
+            color: $Colorgray;
+          }
+          .unitBody {
+            width: 100%;
+            h5 {
+              font-size: 20px;
+              color: $Colorwhite;
+              font-weight: 100;
+              opacity: 0.9;
+              margin-bottom: 10px;
+            }
+            p {
+              color: $Colorgray;
+            }
+          }
+        }
+      }
+    }
+    .ImgDates {
+      figure {
+        margin: 10px 0;
+        img {
+          width: 400px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+// end in agencys
+// start in destination
+.destination {
+  .destinationTextHead {
+    @include TextHeadMain($colorBlack);
+    p {
+      color: $Colorgray;
+      font-size: 20px;
+      text-align: center;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      margin-bottom: $marginTopBottom;
+    }
+  }
+  .backDrop {
+    background-color: rgb(0, 0, 0, 0.85);
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    .Arrow {
+      z-index: 3;
+      background-color: rgb(0, 0, 0);
+      color: $Colorwhite;
+      position: absolute;
+      top: 50%;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .arrowLeft {
+      left: 5%;
+    }
+    .arrowRight {
+      left: 95%;
+    }
+    .imgShow {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      .figimg {
+        min-width: 100%;
+        @include FlexElementRow(center, row);
+        align-content: center;
+        img {
+          // width: 50%;
+          height: 50%;
+        }
+      }
+    }
+    .listImg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #0d0a0a;
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      figure {
+        padding: 5px;
+        img {
+          height: 90px;
+        }
+      }
+    }
+  }
+  .InformatinPlace {
+    @include ShowPlace(rgb(255, 193, 7, 0.3));
+  }
+}
+// end in destination

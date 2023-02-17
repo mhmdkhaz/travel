@@ -1,0 +1,18 @@
+//abstracts
+@import "abstracts/variables", "abstracts/mixin";
+
+//Components
+@import "components/buttons", "components/cards", "components/TextHeadSection",
+  "components/Zigzahimg", "components/header", "components/Input",
+  "components/formLog";
+
+// Pages
+@import "pages/home", "pages/about", "pages/contact", "pages/typography",
+  "pages/log";
+
+// Layouts
+@import "layout/navbar", "layout/footer", "layout/glopal",
+  "layout/MediaRespnsive", "layout/scrollTop";
+
+// base
+@import "base/typography", "base/common", "base/animation";

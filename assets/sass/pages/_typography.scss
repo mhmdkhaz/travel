@@ -1,0 +1,68 @@
+.imageTypo {
+  margin: $marginTopBottom 0;
+  .centerdContent {
+    .boxMain {
+      width: 70%;
+      h1 {
+        font-size: 28px;
+        font-family: "Oswald", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #151515;
+      }
+      figure {
+        width: 100%;
+        margin: 10px 0;
+        img {
+          width: 100%;
+        }
+      }
+      h5 {
+        color: $Colorgray;
+        margin: 10px 0;
+      }
+      p {
+        color: $ColorGrayBold;
+      }
+    }
+    .box {
+      @include FlexElementRow(center, row);
+      margin: $marginTopBottom 0;
+      .secOne {
+        width: 550px;
+        h1 {
+          font-size: 28px;
+          font-family: "Oswald", Helvetica, Arial, sans-serif;
+
+          text-transform: uppercase;
+          color: #151515;
+        }
+        figure {
+          width: 100%;
+          margin: 10px 0;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .secTow {
+        width: 550px;
+        h1 {
+          text-align: center;
+          font-weight: 400;
+          color: $Coloryellow;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          letter-spacing: 5.5px;
+        }
+        p {
+          color: $Colorgray;
+          margin-left: 20px;
+          letter-spacing: 1.2px;
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
