@@ -1526,7 +1526,7 @@ header .ToDivide .BoxInput form button:hover {
 .contactSend .formContact {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
   align-items: center;
 }
@@ -1620,9 +1620,10 @@ header .ToDivide .BoxInput form button:hover {
   -o-border-radius: 35px;
 }
 .contactSend .formContact .map {
-  height: 100%;
+  height: 50vh;
 }
 .contactSend .formContact .map .mapouter {
+  width: 100%;
   height: 100%;
   position: relative;
   text-align: right;
@@ -1713,6 +1714,7 @@ header .ToDivide .BoxInput form button:hover {
   position: absolute;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .wave {

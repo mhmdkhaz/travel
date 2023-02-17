@@ -43,7 +43,7 @@
   background-color: $ColorGrayLight;
   padding: $paddingLeftRightBox 0;
   .formContact {
-    @include GridElement(250px);
+    @include GridElement(350px);
     .boxContact {
       grid-column: 1 / 3;
       div {
@@ -82,8 +82,9 @@
       }
     }
     .map {
-      height: 100%;
+      height: 50vh;
       .mapouter {
+        width: 100%;
         height: 100%;
         position: relative;
         text-align: right;
