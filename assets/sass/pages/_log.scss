@@ -161,6 +161,7 @@
         -o-transform: translateX(100%);
         @include logCreatOverlay();
         height: 100%;
+        text-align: center;
       }
       .createAcouneOverLeft {
         transform: translateX(0) translateY(100%);
