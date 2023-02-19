@@ -12,6 +12,12 @@
       @include GridElement(80vw);
     }
   }
+
+  .services {
+    .BoxServices {
+      grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
+    }
+  }
   .wrapper {
     .AllCarouse {
       .ContentCarouse {
@@ -50,6 +56,17 @@
       }
     }
   }
+  // contact
+  .contactSend {
+    .containerMore {
+      .formContact {
+        gap: 0;
+        .map {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
   // --------------- typography --------------
   .imageTypo {
     .centerdContent {
@@ -59,6 +76,11 @@
     }
   }
   // ----------------- page log in and sign up -----------------
+  .ocean {
+    .wave {
+      height: 350px;
+    }
+  }
   .singinup {
     .mainSign {
       height: 90vh;
