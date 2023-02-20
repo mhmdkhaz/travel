@@ -40,9 +40,9 @@ window.addEventListener("load", (event) => {
   let elementHeader = document.getElementById("contentElementHeader");
 
   let slidesImages = [
-    "../../assets/img/swiper-slide-1.jpg",
-    "../../assets/img/swiper-slide-2.jpg",
-    "../../assets/img/swiper-slide-3.jpg",
+    "assets/img/swiper-slide-1.jpg",
+    "assets/img/swiper-slide-2.jpg",
+    "assets/img/swiper-slide-3.jpg",
   ];
   let position = 0;
   let numberOfSlides = slidesImages.length;
