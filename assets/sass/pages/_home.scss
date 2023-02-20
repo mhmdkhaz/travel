@@ -4,9 +4,17 @@ header {
   height: 100vh;
   background-size: cover;
   position: relative;
+
   .ToDivide {
-    @include GridElement(200px);
+    @include FlexElementRow(center, column);
+    background-size: cover;
     height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include Transtion(0.5s);
+    // padding: 10vw;
     .TextHead {
       h1 {
         @include TextHead($Colorwhite);
@@ -33,155 +41,18 @@ header {
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
-        color: $Colorwhite;
+        // color: $Colorwhite;
         &:hover {
           @include ButtonMain(10px);
         }
       }
     }
-    .BoxInput {
-      border-radius: 8px;
-      max-width: 566px;
-      background-color: rgba(247, 247, 247, 0.9);
-
-      -webkit-border-radius: 8px;
-      -moz-border-radius: 8px;
-      -ms-border-radius: 8px;
-      -o-border-radius: 8px;
-      h2 {
-        @include TextHead($ColorGrayBold);
-      }
-      form {
-        padding-bottom: 30px;
-        span {
-          text-transform: capitalize;
-          color: $Colorgray;
-          margin-bottom: 30px;
-        }
-        .select {
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          width: 100%;
-          height: 40px;
-          margin: 10px 0 20px 0;
-          padding-top: 10px;
-          border-radius: 8px;
-          -webkit-border-radius: 8px;
-          -moz-border-radius: 8px;
-          -ms-border-radius: 8px;
-          -o-border-radius: 8px;
-          &:focus .option {
-            position: relative;
-            pointer-events: all;
-          }
-
-          .option {
-            padding: 0 30px 0 10px;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-            background: $Colorwhite;
-            border-top: $Colorwhite solid 1px;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            pointer-events: none;
-            order: 2;
-            z-index: 1;
-            overflow: hidden;
-            white-space: nowrap;
-            @include Transtion(0.3s);
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            &:hover {
-              color: $Coloryellow;
-            }
-          }
-
-          input {
-            opacity: 0;
-            position: absolute;
-            left: -99999px;
-            &:checked + label {
-              order: 1;
-              z-index: 2;
-              background: $Colorwhite;
-              border-top: none;
-              position: relative;
-            }
-            &:checked + label:after {
-              content: "";
-              width: 0;
-              height: 0;
-              border-left: 5px solid transparent;
-              border-right: 5px solid transparent;
-              border-top: 5px solid white;
-              position: absolute;
-              right: 10px;
-              top: calc(50% - 2.5px);
-              pointer-events: none;
-              z-index: 3;
-            }
-            &:checked + label:before {
-              content: "";
-              position: absolute;
-              right: 0;
-              height: 40px;
-              width: 40px;
-              background: $Colorwhite;
-            }
-          }
-        }
-        .DateDurati {
-          @include GridElement(100px);
-          div {
-            margin-bottom: 30px;
-          }
-          .Info {
-            width: 100%;
-            @include FlexElementRow(space-between, column);
-            align-items: stretch;
-          }
-          .counter {
-            background-color: $Colorwhite;
-            border-radius: 12px;
-            padding: 10px 0;
-            width: 90%;
-            text-align: center;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            -ms-border-radius: 12px;
-            -o-border-radius: 12px;
-            .min {
-              color: $Coloryellow;
-              font-size: 25px;
-              margin-left: -50%;
-              font-weight: 800;
-              cursor: pointer;
-            }
-            .plus {
-              color: $Coloryellow;
-              font-size: 25px;
-              margin-right: -50%;
-              font-weight: 800;
-              cursor: pointer;
-            }
-          }
-        }
-        button {
-          @include ButtonMain(10px);
-          margin: 20px 0 0 50%;
-          width: 50%;
-          text-align: center;
-          transform: translate(-50%, 10px);
-          -webkit-transform: translate(-50%, 10px);
-          -moz-transform: translate(-50%, 10px);
-          -ms-transform: translate(-50%, 10px);
-          -o-transform: translate(-50%, 10px);
-        }
-      }
-    }
+  }
+  .carouselItemVisible {
+    opacity: 1;
+  }
+  .carouselItemHidden {
+    opacity: 0;
   }
 }
 

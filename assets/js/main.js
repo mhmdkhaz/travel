@@ -1,6 +1,4 @@
-// const { data } = require("autoprefixer");
-
-// start top function
+// start in glopal
 let BtnTop = document.querySelector(".scroolTop");
 
 window.onscroll = () => {
@@ -30,25 +28,73 @@ BtnCloseOpen.onclick = () => {
   shadowNav.classList.toggle("showBackShadow");
 };
 
-// header index
-let ImgHeader = document.querySelector("header");
-let slides = [
-  "../../assets/img/swiper-slide-1.jpg",
-  "../../assets/img/swiper-slide-2.jpg",
-];
-let start = 0;
+// end in glopal
 
-let SlideAuto = () => {
-  if (start < slides.length) {
-    start = start + 1;
-  } else {
-    start = 1;
+// ------------------------------------- start in index page ----------------------------
+// header form
+let indexPage = document.querySelector(".home");
+
+window.addEventListener("load", (event) => {
+  event.preventDefault();
+  let ImgHeader = document.querySelector("header");
+  let elementHeader = document.getElementById("contentElementHeader");
+
+  let slidesImages = [
+    "../../assets/img/swiper-slide-1.jpg",
+    "../../assets/img/swiper-slide-2.jpg",
+    "../../assets/img/swiper-slide-3.jpg",
+  ];
+  let position = 0;
+  let numberOfSlides = slidesImages.length;
+
+  let createImgSlidesHeader = () => {
+    for (let i = 0; i < slidesImages.length; i++) {
+      elementHeader.innerHTML += `
+        <div class="ToDivide" style="background-image: url(${slidesImages[i]});">
+          <div class="TextHead">
+            <h1>THE TRIP OF YOUR DREAM</h1>
+            <div class="Zigzag"></div>
+            <p>
+              We offer a variety of destinations to travel to, ranging from
+              exotic to some extreme ones. They include very popular countries
+              and cities like Paris, Rio de Janeiro, Cairo and a lot of others.
+            </p>
+            <button class="LearnMore">learn more</button>
+          </div>
+        </div>
+      `;
+    }
+  };
+  createImgSlidesHeader();
+
+  let slides = document.querySelectorAll(".ToDivide");
+  function hideAllSlides() {
+    // remove all slides not currently being viewed
+    for (const slide of slides) {
+      // slide.classList.remove("carouselItemVisible");
+      slide.classList.add("carouselItemHidden");
+    }
   }
-  // ImgHeader.style.backgroundImage = `url(${slides[start - 1]})`;
-};
-setInterval(SlideAuto, 2000);
 
-// latest
+  const handleMoveToNextSlide = function (e) {
+    setInterval(() => {
+      hideAllSlides();
+      if (position === numberOfSlides - 1) {
+        position = 0;
+      } else {
+        position++;
+      }
+      slides[position].classList.remove("carouselItemHidden");
+      slides[position].classList.add("carouselItemVisible");
+      console.log(position);
+    }, 3000);
+  };
+  handleMoveToNextSlide();
+});
+
+// end header form
+
+// latest;
 let productContainers = document.querySelectorAll(".AllCarouse");
 let nxtBtn = document.querySelector(".nxt-btn");
 let preBtn = document.querySelector(".pre-btn");
@@ -89,7 +135,6 @@ let ScrollSlideLatesAuto = (test, containerWidth) => {
       // console.log(test.scrollLeft);
     } else {
       // test.scrollLeft -= containerWidth;
-      console.log("Ddd");
     }
   }, 5000);
 };
@@ -116,100 +161,113 @@ let SlidetesTimonilas = () => {
 };
 SlidetesTimonilas();
 
-// start in DESTINATIONS
-let imgITem = document.querySelector(".imgShow");
-let show = document.querySelector(".listImg");
-let allBoxImg = document.querySelectorAll(".boximg figure img");
+// // ------------------------------------- end in index page ----------------------------
 
-let showImgAddImgInList = () => {
-  for (let i = 0; i < allBoxImg.length; i++) {
-    imgITem.innerHTML += `<figure class="figimg ${i + 1}">
+// // // ------------------------------------- start in about page ----------------------------
+let aboutPage = document.querySelector(".about");
+
+window.addEventListener("load", (event) => {
+  // start in DESTINATIONS
+  let imgITem = document.querySelector(".imgShow");
+  let show = document.querySelector(".listImg");
+  let allBoxImg = document.querySelectorAll(".boximg figure img");
+
+  let showImgAddImgInList = () => {
+    for (let i = 0; i < allBoxImg.length; i++) {
+      imgITem.innerHTML += `<figure class="figimg ${i + 1}">
           <img src="${allBoxImg[i].getAttribute("src")}" alt="">
         </figure>`;
 
-    // add all img in list img
-    show.innerHTML += `<figure data-id="1">
+      // add all img in list img
+      show.innerHTML += `<figure data-id="1">
     <img src="${allBoxImg[i].getAttribute("src")}" alt="">
     </figure>`;
+    }
+  };
+  showImgAddImgInList();
+
+  let containerItemImg = document.querySelectorAll(".imgShow");
+  let nextBtnSlide = document.querySelector(".arrowLeft");
+  let prevtBtnSlide = document.querySelector(".arrowRight");
+
+  let btnNextPrev = () => {
+    containerItemImg.forEach((slideDes) => {
+      let containerWidth = slideDes.getBoundingClientRect().width;
+
+      nextBtnSlide.addEventListener("click", () => {
+        slideDes.scrollLeft -= containerWidth;
+      });
+
+      prevtBtnSlide.addEventListener("click", () => {
+        slideDes.scrollLeft += containerWidth;
+      });
+    });
+  };
+  btnNextPrev();
+
+  let slidesFigimg = document.querySelectorAll(".figimg");
+  let allListImg = document.querySelectorAll(".listImg figure");
+
+  let startSlides = 1;
+  allLIstImgChosse(startSlides);
+
+  function allLIstImgChosse(numSlides) {
+    allListImg.forEach((list) => {
+      list.addEventListener("click", () => {
+        let dataId = list.dataset.id;
+        console.log(document.querySelectorAll(dataId));
+        // let leftImg = element.getBoundingClientRect().left.toFixed();
+      });
+    });
+
+    if (numSlides > slidesFigimg.length) startSlides = 1;
+    if (numSlides < 1) startSlides = slidesFigimg.length;
+    // slidesFigimg[startSlides - 1].style.marginLeft = "250px";
   }
-};
-showImgAddImgInList();
+});
+//  ------------------------------------- end in about page ----------------------------
 
-let containerItemImg = document.querySelectorAll(".imgShow");
-let nextBtnSlide = document.querySelector(".arrowLeft");
-let prevtBtnSlide = document.querySelector(".arrowRight");
+// // ------------------------------------- start in sign createAcoutn page ----------------------------
+// // start in page sign in and sign up
+let MainBtnLog = document.querySelector(".btnLog");
 
-let btnNextPrev = () => {
-  containerItemImg.forEach((slideDes) => {
-    let containerWidth = slideDes.getBoundingClientRect().width;
-
-    nextBtnSlide.addEventListener("click", () => {
-      slideDes.scrollLeft -= containerWidth;
-    });
-
-    prevtBtnSlide.addEventListener("click", () => {
-      slideDes.scrollLeft += containerWidth;
-    });
-  });
-};
-btnNextPrev();
-
-let slidesFigimg = document.querySelectorAll(".figimg");
-let allListImg = document.querySelectorAll(".listImg figure");
-
-let startSlides = 1;
-allLIstImgChosse(startSlides);
-
-function allLIstImgChosse(numSlides) {
-  allListImg.forEach((list) => {
-    list.addEventListener("click", () => {
-      let dataId = list.dataset.id;
-      console.log(document.querySelectorAll(dataId));
-      // let leftImg = element.getBoundingClientRect().left.toFixed();
-    });
+window.addEventListener("load", (event) => {
+  event.preventDefault();
+  console.log("d");
+  let sign = document.querySelector(".signIng");
+  sign.addEventListener("click", () => {
+    // overlay move right
+    document.querySelector(".overlay").classList.add("overlayRight");
+    // log in text hide
+    document.querySelector(".logIngOver").classList.add("logIngOverTop");
+    // content input sing in and sign up
+    document
+      .querySelector(".contentSignUpInForm")
+      .classList.add("overlayTopContentSignUpForm");
+    //acount hide
+    document
+      .querySelector(".createAcouneOver")
+      .classList.add("createAcouneOverLeft");
+    // show sign in form
+    document.querySelector(".signInForm").classList.add("signInFormCenter");
   });
 
-  if (numSlides > slidesFigimg.length) startSlides = 1;
-  if (numSlides < 1) startSlides = slidesFigimg.length;
-  // slidesFigimg[startSlides - 1].style.marginLeft = "250px";
-}
-
-// start in DESTINATIONS
-
-// start in page sign in and sign up
-let sign = document.querySelector(".signIng");
-sign.addEventListener("click", () => {
-  // overlay move right
-  document.querySelector(".overlay").classList.add("overlayRight");
-  // log in text hide
-  document.querySelector(".logIngOver").classList.add("logIngOverTop");
-  // content input sing in and sign up
-  document
-    .querySelector(".contentSignUpInForm")
-    .classList.add("overlayTopContentSignUpForm");
-  //acount hide
-  document
-    .querySelector(".createAcouneOver")
-    .classList.add("createAcouneOverLeft");
-  // show sign in form
-  document.querySelector(".signInForm").classList.add("signInFormCenter");
+  let signUp = document.querySelector(".signUp");
+  signUp.addEventListener("click", () => {
+    // overlay move right
+    document.querySelector(".overlay").classList.remove("overlayRight");
+    // log in text hide
+    document.querySelector(".logIngOver").classList.remove("logIngOverTop");
+    // content input sing in and sign up
+    document
+      .querySelector(".contentSignUpInForm")
+      .classList.remove("overlayTopContentSignUpForm");
+    //acount hide
+    document
+      .querySelector(".createAcouneOver")
+      .classList.remove("createAcouneOverLeft");
+    // show sign in form
+    document.querySelector(".signInForm").classList.remove("signInFormCenter");
+  });
 });
-
-let signUp = document.querySelector(".signUp");
-signUp.addEventListener("click", () => {
-  // overlay move right
-  document.querySelector(".overlay").classList.remove("overlayRight");
-  // log in text hide
-  document.querySelector(".logIngOver").classList.remove("logIngOverTop");
-  // content input sing in and sign up
-  document
-    .querySelector(".contentSignUpInForm")
-    .classList.remove("overlayTopContentSignUpForm");
-  //acount hide
-  document
-    .querySelector(".createAcouneOver")
-    .classList.remove("createAcouneOverLeft");
-  // show sign in form
-  document.querySelector(".signInForm").classList.remove("signInFormCenter");
-});
-// end in page sign in and sign up
+// // ------------------------------------- end in sign createAcoutn page ----------------------------

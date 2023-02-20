@@ -115,12 +115,22 @@ header {
   position: relative;
 }
 header .ToDivide {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-size: cover;
   height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 header .ToDivide .TextHead h1 {
   color: #ffffff;
@@ -155,7 +165,6 @@ header .ToDivide .TextHead .LearnMore {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  color: #ffffff;
 }
 header .ToDivide .TextHead .LearnMore:hover {
   all: unset;
@@ -182,184 +191,11 @@ header .ToDivide .TextHead .LearnMore:hover:hover {
   background-color: #ffc107;
   color: #ffffff;
 }
-header .ToDivide .BoxInput {
-  border-radius: 8px;
-  max-width: 566px;
-  background-color: rgba(247, 247, 247, 0.9);
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+header .carouselItemVisible {
+  opacity: 1;
 }
-header .ToDivide .BoxInput h2 {
-  color: #333333;
-  line-height: 1.45;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  font-weight: 800;
-  font-size: 2.2vw;
-}
-header .ToDivide .BoxInput form {
-  padding-bottom: 30px;
-}
-header .ToDivide .BoxInput form span {
-  text-transform: capitalize;
-  color: #868e96;
-  margin-bottom: 30px;
-}
-header .ToDivide .BoxInput form .select {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: 40px;
-  margin: 10px 0 20px 0;
-  padding-top: 10px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-header .ToDivide .BoxInput form .select:focus .option {
-  position: relative;
-  pointer-events: all;
-}
-header .ToDivide .BoxInput form .select .option {
-  padding: 0 30px 0 10px;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-top: #ffffff solid 1px;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  pointer-events: none;
-  order: 2;
-  z-index: 1;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-header .ToDivide .BoxInput form .select .option:hover {
-  color: #ffc107;
-}
-header .ToDivide .BoxInput form .select input {
+header .carouselItemHidden {
   opacity: 0;
-  position: absolute;
-  left: -99999px;
-}
-header .ToDivide .BoxInput form .select input:checked + label {
-  order: 1;
-  z-index: 2;
-  background: #ffffff;
-  border-top: none;
-  position: relative;
-}
-header .ToDivide .BoxInput form .select input:checked + label:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid white;
-  position: absolute;
-  right: 10px;
-  top: calc(50% - 2.5px);
-  pointer-events: none;
-  z-index: 3;
-}
-header .ToDivide .BoxInput form .select input:checked + label:before {
-  content: "";
-  position: absolute;
-  right: 0;
-  height: 40px;
-  width: 40px;
-  background: #ffffff;
-}
-header .ToDivide .BoxInput form .DateDurati {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  justify-content: center;
-  align-items: center;
-}
-header .ToDivide .BoxInput form .DateDurati div {
-  margin-bottom: 30px;
-}
-header .ToDivide .BoxInput form .DateDurati .Info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  align-items: stretch;
-}
-header .ToDivide .BoxInput form .DateDurati .counter {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 10px 0;
-  width: 90%;
-  text-align: center;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-}
-header .ToDivide .BoxInput form .DateDurati .counter .min {
-  color: #ffc107;
-  font-size: 25px;
-  margin-left: -50%;
-  font-weight: 800;
-  cursor: pointer;
-}
-header .ToDivide .BoxInput form .DateDurati .counter .plus {
-  color: #ffc107;
-  font-size: 25px;
-  margin-right: -50%;
-  font-weight: 800;
-  cursor: pointer;
-}
-header .ToDivide .BoxInput form button {
-  all: unset;
-  padding: 10px;
-  color: #ffc107;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  text-transform: capitalize;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  border: 2px solid #ffc107;
-  cursor: pointer;
-  text-align: center;
-  margin: 20px 0 0 50%;
-  width: 50%;
-  text-align: center;
-  transform: translate(-50%, 10px);
-  -webkit-transform: translate(-50%, 10px);
-  -moz-transform: translate(-50%, 10px);
-  -ms-transform: translate(-50%, 10px);
-  -o-transform: translate(-50%, 10px);
-}
-header .ToDivide .BoxInput form button:hover {
-  background-color: #ffc107;
-  color: #ffffff;
 }
 
 .wide {
@@ -1249,224 +1085,6 @@ header .ToDivide .BoxInput form button:hover {
   height: auto;
 }
 
-.destination .destinationTextHead {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.destination .destinationTextHead h1 {
-  color: #252525;
-  line-height: 1.45;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  font-weight: 800;
-  font-size: 2.2vw;
-}
-.destination .destinationTextHead .ZigZag {
-  background-image: url("../img/divider-decorate.png");
-  width: 50px;
-  height: 10px;
-  margin: 25px 0 35px 0;
-}
-.destination .destinationTextHead p {
-  color: #868e96;
-  font-size: 20px;
-  text-align: center;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  margin-bottom: 70px;
-}
-.destination .backDrop {
-  background-color: rgba(0, 0, 0, 0.85);
-  position: absolute;
-  display: flex;
-  left: 0;
-  top: 0;
-  z-index: 5;
-  width: 100%;
-  height: 100%;
-}
-.destination .backDrop .Arrow {
-  z-index: 3;
-  background-color: rgb(0, 0, 0);
-  color: #ffffff;
-  position: absolute;
-  top: 50%;
-  padding: 10px;
-  cursor: pointer;
-}
-.destination .backDrop .arrowLeft {
-  left: 5%;
-}
-.destination .backDrop .arrowRight {
-  left: 95%;
-}
-.destination .backDrop .imgShow {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-  scroll-behavior: smooth;
-}
-.destination .backDrop .imgShow .figimg {
-  min-width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-.destination .backDrop .imgShow .figimg img {
-  height: 50%;
-}
-.destination .backDrop .listImg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #0d0a0a;
-  width: 100%;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-}
-.destination .backDrop .listImg figure {
-  padding: 5px;
-}
-.destination .backDrop .listImg figure img {
-  height: 90px;
-}
-.destination .InformatinPlace {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  justify-content: center;
-  align-items: center;
-}
-.destination .InformatinPlace .boximg figure {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-.destination .InformatinPlace .boximg figure img {
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  width: 100%;
-}
-.destination .InformatinPlace .boximg figure img:hover .shadow {
-  opacity: 1;
-}
-.destination .InformatinPlace .boximg figure .shadow {
-  background-color: rgba(255, 193, 7, 0.3);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: "center";
-  align-items: center;
-  justify-content: center;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-  -moz-transition: all 0.6s ease-in-out;
-  -ms-transition: all 0.6s ease-in-out;
-  -o-transition: all 0.6s ease-in-out;
-}
-.destination .InformatinPlace .boximg figure .shadow .elmentCenter {
-  all: unset;
-  padding: 10px;
-  color: #ffc107;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  text-transform: capitalize;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  border: 2px solid #ffc107;
-  cursor: pointer;
-  text-align: center;
-  transform: rotateX(90deg);
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-  -ms-transform: rotateX(90deg);
-  -o-transform: rotateX(90deg);
-  transition: all 0.7s ease-in-out;
-  -webkit-transition: all 0.7s ease-in-out;
-  -moz-transition: all 0.7s ease-in-out;
-  -ms-transition: all 0.7s ease-in-out;
-  -o-transition: all 0.7s ease-in-out;
-}
-.destination .InformatinPlace .boximg figure .shadow .elmentCenter:hover {
-  background-color: #ffc107;
-  color: #ffffff;
-}
-.destination .InformatinPlace .boximg figure:hover .shadow {
-  opacity: 1;
-}
-.destination .InformatinPlace .boximg figure:hover .shadow .elmentCenter {
-  opacity: 1;
-  transform: rotateX(0deg);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  -ms-transform: rotateX(0deg);
-  -o-transform: rotateX(0deg);
-}
-.destination .InformatinPlace .boximg figure:hover img {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-}
-.destination .InformatinPlace .boximg .InfoImg {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 0;
-}
-.destination .InformatinPlace .boximg .InfoImg span {
-  text-transform: capitalize;
-  font-size: 20px;
-  font-weight: 100;
-}
-.destination .InformatinPlace .boximg .InfoImg .place {
-  color: #000;
-}
-.destination .InformatinPlace .boximg .InfoImg .price {
-  color: #ffc107;
-}
-
 .contactMe {
   margin-top: 30px;
 }
@@ -1805,7 +1423,7 @@ header .ToDivide .BoxInput form button:hover {
   z-index: 5;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -1824,7 +1442,6 @@ header .ToDivide .BoxInput form button:hover {
   text-transform: uppercase;
 }
 .singinup .mainSign .secOne .logIngOver p {
-  margin: 20px 0 30px;
   font-size: 16px;
   font-weight: 100;
   line-height: 20px;
@@ -1864,7 +1481,6 @@ header .ToDivide .BoxInput form button:hover {
   opacity: 0;
 }
 .singinup .mainSign .secOne .signupForm {
-  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2010,7 +1626,6 @@ header .ToDivide .BoxInput form button:hover {
   -moz-transition: all 0.8s ease-in-out;
   -ms-transition: all 0.8s ease-in-out;
   -o-transition: all 0.8s ease-in-out;
-  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2144,7 +1759,7 @@ header .ToDivide .BoxInput form button:hover {
   z-index: 5;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -2165,7 +1780,6 @@ header .ToDivide .BoxInput form button:hover {
   text-transform: uppercase;
 }
 .singinup .mainSign .secTow .createAcouneOver p {
-  margin: 20px 0 30px;
   font-size: 16px;
   font-weight: 100;
   line-height: 20px;
@@ -2641,6 +2255,9 @@ body {
   }
 }
 @media (max-width: 767px) {
+  header .ToDivide .TextHead {
+    padding: 10vw;
+  }
   .testimnials .ContentSlideQuota .SlideTestimnialsQuota {
     display: flex;
     flex-direction: column;
@@ -2693,6 +2310,22 @@ body {
   .serviceWe .WeAre figure img {
     width: 100%;
   }
+  .agencys .ContentAgencys {
+    grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+  }
+  .agencys .ContentAgencys .ImgDates {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .agencys .ContentAgencys .ImgDates figure img {
+    width: 80vw;
+  }
+  .destination .InformatinPlace {
+    grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
+  }
   .contactSend .containerMore .formContact {
     gap: 0;
   }
@@ -2711,7 +2344,7 @@ body {
   }
   .singinup .mainSign .overlay {
     width: 100%;
-    height: 40%;
+    height: 30%;
   }
   .singinup .mainSign .overlayRight {
     transform: translate(0, 100%);
@@ -2719,17 +2352,18 @@ body {
     -moz-transform: translate(0, 100%);
     -ms-transform: translate(0, 100%);
     -o-transform: translate(0, 100%);
-    height: 50%;
+    height: 60%;
   }
   .singinup .mainSign .secOne {
     flex-direction: column;
+    padding: 10px 0;
   }
   .singinup .mainSign .secOne .logIngOver {
-    height: 40%;
+    height: 30%;
   }
   .singinup .mainSign .secOne .signupForm {
     padding: 5px;
-    height: 60%;
+    height: 70%;
   }
   .singinup .mainSign .secTow {
     flex-direction: column;
@@ -2737,10 +2371,10 @@ body {
   }
   .singinup .mainSign .secTow .signInForm {
     padding: 5px;
-    height: 50%;
+    height: 60%;
   }
   .singinup .mainSign .secTow .createAcouneOver {
-    height: 50%;
+    height: 40%;
   }
   .singinup .mainSign .secTow .createAcouneOverLeft {
     transform: translateX(0) translateY(0);
