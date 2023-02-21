@@ -83,6 +83,17 @@
     }
   }
   // contact
+  .contactMe {
+    .cardsContact {
+      .cardContactContact {
+        border-right: none;
+        border-bottom: 2px solid rgb(134, 142, 150, 0.5);
+      }
+      .cardContactContact:last-child {
+        border-bottom: none;
+      }
+    }
+  }
   .contactSend {
     .containerMore {
       .formContact {

@@ -2328,6 +2328,13 @@ body {
   .destination .InformatinPlace {
     grid-template-columns: repeat(auto-fit, minmax(80vw, 1fr));
   }
+  .contactMe .cardsContact .cardContactContact {
+    border-right: none;
+    border-bottom: 2px solid rgba(134, 142, 150, 0.5);
+  }
+  .contactMe .cardsContact .cardContactContact:last-child {
+    border-bottom: none;
+  }
   .contactSend .containerMore .formContact {
     gap: 0;
   }
