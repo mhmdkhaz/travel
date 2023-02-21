@@ -93,8 +93,7 @@
 
 @mixin logCreatOverlay() {
   z-index: 5;
-  overflow: hidden;
-  @include FlexElementRow(center, column);
+  @include FlexElementRow(center, center);
   height: 100%;
   width: 100%;
   color: $Colorwhite;
