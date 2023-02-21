@@ -1615,6 +1615,7 @@ header .carouselItemHidden {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  z-index: -1;
 }
 .singinup .mainSign .secTow .signInForm {
   z-index: 5;

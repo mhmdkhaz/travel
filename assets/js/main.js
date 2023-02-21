@@ -230,11 +230,13 @@ window.addEventListener("load", (event) => {
 // // ------------------------------------- start in sign createAcoutn page ----------------------------
 // // start in page sign in and sign up
 let MainBtnLog = document.querySelector(".btnLog");
+let sectionTwo = document.querySelector(".secTow");
 
 window.addEventListener("load", (event) => {
   event.preventDefault();
   let sign = document.querySelector(".signIng");
   sign.addEventListener("click", () => {
+    sectionTwo.style.zIndex = "5";
     // overlay move right
     document.querySelector(".overlay").classList.add("overlayRight");
     // log in text hide
@@ -253,6 +255,7 @@ window.addEventListener("load", (event) => {
 
   let signUp = document.querySelector(".signUp");
   signUp.addEventListener("click", () => {
+    sectionTwo.style.zIndex = "-1";
     // overlay move right
     document.querySelector(".overlay").classList.remove("overlayRight");
     // log in text hide
