@@ -1374,8 +1374,9 @@ header .carouselItemHidden {
   }
 }
 .singinup {
-  max-width: 100%;
   height: 100vh;
+  max-width: 100%;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1385,7 +1386,6 @@ header .carouselItemHidden {
   background: transparent;
   display: flex;
   width: 768px;
-  height: 480px;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
@@ -1426,6 +1426,7 @@ header .carouselItemHidden {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   height: 100%;
   width: 100%;
   color: #ffffff;
@@ -1439,13 +1440,14 @@ header .carouselItemHidden {
   font-size: 35px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-align: center;
 }
 .singinup .mainSign .secOne .logIngOver p {
   font-size: 16px;
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
-  margin: 25px 0;
+  margin: 10px 0;
   text-align: center;
 }
 .singinup .mainSign .secOne .logIngOver button {
@@ -1762,6 +1764,7 @@ header .carouselItemHidden {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   height: 100%;
   width: 100%;
   color: #ffffff;
@@ -1777,13 +1780,14 @@ header .carouselItemHidden {
   font-size: 35px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-align: center;
 }
 .singinup .mainSign .secTow .createAcouneOver p {
   font-size: 16px;
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
-  margin: 25px 0;
+  margin: 10px 0;
   text-align: center;
 }
 .singinup .mainSign .secTow .createAcouneOver button {
@@ -2346,12 +2350,11 @@ body {
     height: 30%;
   }
   .singinup .mainSign {
-    height: 90vh;
     width: 80vw;
   }
   .singinup .mainSign .overlay {
     width: 100%;
-    height: 40%;
+    height: 33%;
   }
   .singinup .mainSign .overlayRight {
     transform: translate(0, 100%);
@@ -2366,7 +2369,7 @@ body {
     padding: 10px 0;
   }
   .singinup .mainSign .secOne .signupForm {
-    padding: 5px;
+    padding: 35px;
   }
   .singinup .mainSign .secTow {
     flex-direction: column;

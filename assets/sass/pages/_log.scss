@@ -50,8 +50,9 @@
 
 // start in sign in and sign up
 .singinup {
-  max-width: 100%;
   height: 100vh;
+  max-width: 100%;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +61,6 @@
     background: transparent;
     display: flex;
     width: 768px;
-    height: 480px;
 
     border-radius: 50px;
     -webkit-border-radius: 50px;
