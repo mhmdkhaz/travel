@@ -233,7 +233,6 @@ let MainBtnLog = document.querySelector(".btnLog");
 
 window.addEventListener("load", (event) => {
   event.preventDefault();
-  console.log("d");
   let sign = document.querySelector(".signIng");
   sign.addEventListener("click", () => {
     // overlay move right

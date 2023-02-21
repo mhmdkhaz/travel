@@ -1,5 +1,5 @@
 @mixin formContetn($width) {
-  @include FlexElementRow(flex-start, column);
+  @include FlexElementRow(flex-start, row);
   align-items: flex-start;
   label {
     text-align: start;

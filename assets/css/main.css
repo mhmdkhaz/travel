@@ -985,7 +985,7 @@ header .carouselItemHidden {
 
 .agencys {
   background-color: #333333;
-  margin: 70px 0;
+  margin-top: 70px;
   padding: 70px 0;
 }
 .agencys .ContentAgencys {
@@ -1181,7 +1181,7 @@ header .carouselItemHidden {
 }
 .contactSend .formContact .boxContact form .AllInput .ContentInput {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
@@ -1195,7 +1195,7 @@ header .carouselItemHidden {
 }
 .contactSend .formContact .boxContact form .AllInput .ContentInput .contactInpText {
   all: unset;
-  width: 80%;
+  width: 100%;
   min-height: 1px;
   padding: 12px 25px;
   font-weight: 300;
@@ -1210,7 +1210,7 @@ header .carouselItemHidden {
 }
 .contactSend .formContact .boxContact form .message {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
@@ -1224,7 +1224,7 @@ header .carouselItemHidden {
 }
 .contactSend .formContact .boxContact form .message .contactInpText {
   all: unset;
-  width: 90%;
+  width: 100%;
   min-height: 1px;
   padding: 12px 25px;
   font-weight: 300;
@@ -1329,7 +1329,7 @@ header .carouselItemHidden {
 .ocean {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   overflow: hidden;
@@ -1423,7 +1423,7 @@ header .carouselItemHidden {
   z-index: 5;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -1446,6 +1446,7 @@ header .carouselItemHidden {
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
+  margin: 25px 0;
   text-align: center;
 }
 .singinup .mainSign .secOne .logIngOver button {
@@ -1759,7 +1760,7 @@ header .carouselItemHidden {
   z-index: 5;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -1784,6 +1785,7 @@ header .carouselItemHidden {
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
+  margin: 25px 0;
   text-align: center;
 }
 .singinup .mainSign .secTow .createAcouneOver button {
@@ -2311,7 +2313,7 @@ body {
     width: 100%;
   }
   .agencys .ContentAgencys {
-    grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(90vw, 1fr));
   }
   .agencys .ContentAgencys .ImgDates {
     display: flex;
@@ -2336,7 +2338,7 @@ body {
     width: 100%;
   }
   .ocean .wave {
-    height: 350px;
+    height: 30%;
   }
   .singinup .mainSign {
     height: 90vh;
@@ -2344,7 +2346,7 @@ body {
   }
   .singinup .mainSign .overlay {
     width: 100%;
-    height: 32%;
+    height: 40%;
   }
   .singinup .mainSign .overlayRight {
     transform: translate(0, 100%);
@@ -2358,12 +2360,8 @@ body {
     flex-direction: column;
     padding: 10px 0;
   }
-  .singinup .mainSign .secOne .logIngOver {
-    height: 30%;
-  }
   .singinup .mainSign .secOne .signupForm {
     padding: 5px;
-    height: 70%;
   }
   .singinup .mainSign .secTow {
     flex-direction: column;
@@ -2371,10 +2369,6 @@ body {
   }
   .singinup .mainSign .secTow .signInForm {
     padding: 5px;
-    height: 60%;
-  }
-  .singinup .mainSign .secTow .createAcouneOver {
-    height: 40%;
   }
   .singinup .mainSign .secTow .createAcouneOverLeft {
     transform: translateX(0) translateY(0);

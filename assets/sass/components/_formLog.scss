@@ -94,7 +94,7 @@
 @mixin logCreatOverlay() {
   z-index: 5;
   overflow: hidden;
-  @include FlexElementRow(center, row);
+  @include FlexElementRow(center, column);
   height: 100%;
   width: 100%;
   color: $Colorwhite;
@@ -109,6 +109,7 @@
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
+    margin: 25px 0;
     text-align: center;
   }
   button {

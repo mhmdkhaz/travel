@@ -73,11 +73,11 @@
         .AllInput {
           @include GridElement(300px);
           .ContentInput {
-            @include formContetn(80%);
+            @include formContetn(100%);
           }
         }
         .message {
-          @include formContetn(90%);
+          @include formContetn(100%);
         }
       }
     }
