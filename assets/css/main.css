@@ -1421,9 +1421,8 @@ header .carouselItemHidden {
 }
 .singinup .mainSign .secOne .logIngOver {
   z-index: 5;
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -1758,9 +1757,8 @@ header .carouselItemHidden {
   -ms-transform: translateX(100%);
   -o-transform: translateX(100%);
   z-index: 5;
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
